@@ -203,7 +203,8 @@ class MainViewModel extends BaseViewModel {
       Navigator.push(
           context,
           PageTransition(
-              type: PageTransitionType.fade, child: EditUserProfileScreen2()
+              type: PageTransitionType.fade,
+              child: const EditUserProfileScreen2()
               //Login()
 
               ));
@@ -264,7 +265,8 @@ class MainViewModel extends BaseViewModel {
       Navigator.push(
           context,
           PageTransition(
-              type: PageTransitionType.fade, child: EditUserProfileScreen2()
+              type: PageTransitionType.fade,
+              child: const EditUserProfileScreen2()
               //Login()
 
               ));
@@ -324,7 +326,8 @@ class MainViewModel extends BaseViewModel {
       notifyListeners();
       Navigator.push(
           context,
-          PageTransition(type: PageTransitionType.fade, child: ProfileScreen1()
+          PageTransition(
+              type: PageTransitionType.fade, child: const ProfileScreen1()
               // Login()
 
               ));
@@ -369,9 +372,9 @@ class MainViewModel extends BaseViewModel {
         prefService.saveUserAvatar(avatar!);
         // loction= response.data.l
         loadingWidget = false;
-        navigationService.navigateToUntil(to: locationScreen()
+        navigationService.navigateToUntil(to: const locationScreen()
 
-            //LocationsConfirmScreen()
+            // LocationsConfirmScreen()
             );
       } else {
         showErrorMessage(context, "Something Went Wrong");
@@ -392,11 +395,11 @@ class MainViewModel extends BaseViewModel {
 
   Future doUserProfile(
     BuildContext context,
-    String id,
     String date_of_birth,
     String country,
     String address,
     String avatar,
+    String id,
   ) async {
     if (dateofbithController.text.isEmpty) {
       showErrorMessage(context, "Please Enter Date of Birth");
@@ -427,7 +430,8 @@ class MainViewModel extends BaseViewModel {
       // Navigator.pop(context);
       Navigator.push(
           context,
-          PageTransition(type: PageTransitionType.fade, child: ProfileScreen2()
+          PageTransition(
+              type: PageTransitionType.fade, child: const ProfileScreen2()
               // Login()
 
               ));
@@ -474,7 +478,7 @@ class MainViewModel extends BaseViewModel {
   void onLogout() async {
     await prefService.removeUserToken();
     // prefService.removeUserAddress();
-    navigationService.navigateToUntil(to: Login());
+    navigationService.navigateToUntil(to: const Login());
   }
 
 // ########### Get medical  histroy api start #############
@@ -535,12 +539,12 @@ class MainViewModel extends BaseViewModel {
       ),
       backgroundColor: Colors.red,
       padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
             topRight: Radius.circular(20), topLeft: Radius.circular(20)),
       ),
       elevation: 10,
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
     ));
   }
 }

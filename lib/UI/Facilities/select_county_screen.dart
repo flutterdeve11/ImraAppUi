@@ -17,9 +17,11 @@ import '../../Widgets/page_horizontal_margin.dart';
 import '../../Widgets/text_widget.dart';
 import '../../Widgets/textfiled_widget.dart';
 import '../../app/locator.dart';
+import '../createprofilescreen/profile_screen1.dart';
 import '../profilescreen/edit_user_profile_screen2.dart';
 import 'filter_screen.dart';
 import 'package:country_icons/country_icons.dart';
+
 class SelectCountryScreen extends StatefulWidget {
   const SelectCountryScreen({Key? key}) : super(key: key);
 
@@ -63,7 +65,6 @@ class _SelectCountryScreenState extends State<SelectCountryScreen> {
                   PageHorizontalMargin(
                     widget: Column(
                       children: <Widget>[
-
                         // Center(
                         //   child: CountryFlag.fromCountryCode(
                         //     'ES',
@@ -142,7 +143,7 @@ class _SelectCountryScreenState extends State<SelectCountryScreen> {
                         //   // countryFilter: ["United States", "Canada", "Mexico"],
                         // ),
 
-                        Text(countryValue),
+                        // Text(countryValue),
                         // CSCPicker(
                         //   showStates: true,
                         //   showCities: true,
@@ -181,6 +182,7 @@ class _SelectCountryScreenState extends State<SelectCountryScreen> {
                         //   ),
                         // ),
                         // //2
+                        // Text(selectedOption.toString()),
                         // ListTile(
                         //   title: const Text('Australia'),
                         //   leading: Image.asset(ImageUtils.australia),
@@ -229,95 +231,95 @@ class _SelectCountryScreenState extends State<SelectCountryScreen> {
                         SizedBox(
                           height: 2.h,
                         ),
-                        // ListTile(
-                        //   title: const Text('United Kingdom'),
-                        //   leading: Image.asset(ImageUtils.uk),
-                        //   trailing: Radio<int>(
-                        //     value: 3,
-                        //     groupValue: selectedOption,
-                        //     onChanged: (int? value) {
-                        //       setState(() {
-                        //         selectedOption = value!;
-                        //         // print("Selected Option: $selectedOption");
-                        //       });
-                        //     },
-                        //   ),
-                        // ),
-                        // SizedBox(
-                        //   height: 2.h,
-                        // ),
-                        // ListTile(
-                        //   title: const Text('Netherland'),
-                        //   leading: Image.asset(ImageUtils.netherland),
-                        //   trailing: Radio<int>(
-                        //     value: 4,
-                        //     groupValue: selectedOption,
-                        //     onChanged: (int? value) {
-                        //       setState(() {
-                        //         selectedOption = value!;
-                        //         // print("Selected Option: $selectedOption");
-                        //       });
-                        //     },
-                        //   ),
-                        // ),
-                        // SizedBox(
-                        //   height: 2.h,
-                        // ),
-                        // ListTile(
-                        //   title: const Text('Germany'),
-                        //   leading: Image.asset(ImageUtils.germany),
-                        //   trailing: Radio<int>(
-                        //     value: 5,
-                        //     groupValue: selectedOption,
-                        //     onChanged: (int? value) {
-                        //       setState(() {
-                        //         selectedOption = value!;
-                        //         // print("Selected Option: $selectedOption");
-                        //       });
-                        //     },
-                        //   ),
-                        // ),
-                        // SizedBox(
-                        //   height: 2.h,
-                        // ),
-                        // ListTile(
-                        //   title: const Text('United ArabEnirates'),
-                        //   leading: Image.asset(ImageUtils.flagimg),
-                        //   trailing: Radio<int>(
-                        //     value: 6,
-                        //     groupValue: selectedOption,
-                        //     onChanged: (int? value) {
-                        //       setState(() {
-                        //         selectedOption = value!;
-                        //         // print("Selected Option: $selectedOption");
-                        //       });
-                        //     },
-                        //   ),
-                        // ),
-                        // SizedBox(
-                        //   height: 2.h,
-                        // ),
-                        // ListTile(
-                        //   title: const Text('Canada'),
-                        //   leading: Image.asset(ImageUtils.canada),
-                        //   trailing: Radio<int>(
-                        //     value: 7,
-                        //     groupValue: selectedOption,
-                        //     onChanged: (int? value) {
-                        //       setState(() {
-                        //         selectedOption = value!;
-                        //         // print("Selected Option: $selectedOption");
-                        //       });
-                        //     },
-                        //   ),
-                        // ),
-                        // SizedBox(
-                        //   height: 2.h,
-                        // ),
-                        //
-                        // SizedBox(
-                        //   height: 10.h,
-                        // ),
+                        ListTile(
+                          title: const Text('United Kingdom'),
+                          leading: Image.asset(ImageUtils.uk),
+                          trailing: Radio<int>(
+                            value: 3,
+                            groupValue: selectedOption,
+                            onChanged: (int? value) {
+                              setState(() {
+                                selectedOption = value!;
+                                // print("Selected Option: $selectedOption");
+                              });
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        ListTile(
+                          title: const Text('Netherland'),
+                          leading: Image.asset(ImageUtils.netherland),
+                          trailing: Radio<int>(
+                            value: 4,
+                            groupValue: selectedOption,
+                            onChanged: (int? value) {
+                              setState(() {
+                                selectedOption = value!;
+                                // print("Selected Option: $selectedOption");
+                              });
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        ListTile(
+                          title: const Text('Germany'),
+                          leading: Image.asset(ImageUtils.germany),
+                          trailing: Radio<int>(
+                            value: 5,
+                            groupValue: selectedOption,
+                            onChanged: (int? value) {
+                              setState(() {
+                                selectedOption = value!;
+                                // print("Selected Option: $selectedOption");
+                              });
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        ListTile(
+                          title: const Text('United ArabEnirates'),
+                          leading: Image.asset(ImageUtils.flagimg),
+                          trailing: Radio<int>(
+                            value: 6,
+                            groupValue: selectedOption,
+                            onChanged: (int? value) {
+                              setState(() {
+                                selectedOption = value!;
+                                // print("Selected Option: $selectedOption");
+                              });
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+                        ListTile(
+                          title: const Text('Canada'),
+                          leading: Image.asset(ImageUtils.canada),
+                          trailing: Radio<int>(
+                            value: 7,
+                            groupValue: selectedOption,
+                            onChanged: (int? value) {
+                              setState(() {
+                                selectedOption = value!;
+                                // print("Selected Option: $selectedOption");
+                              });
+                            },
+                          ),
+                        ),
+                        SizedBox(
+                          height: 2.h,
+                        ),
+
+                        SizedBox(
+                          height: 10.h,
+                        ),
                         Container(
                           decoration: const BoxDecoration(
                             shape: BoxShape.rectangle,
@@ -337,11 +339,14 @@ class _SelectCountryScreenState extends State<SelectCountryScreen> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25)),
                               onPressed: () {
-                                // Navigator.push(
-                                //     context,
-                                //     PageTransition(
-                                //         type: PageTransitionType.fade,
-                                //         child: EditUserProfileScreen2()));
+                                Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType.fade,
+                                        child: ProfileScreen1()
+                                        //EditUserProfileScreen2()
+
+                                        ));
                               },
                               child: Text(
                                 "Submit",

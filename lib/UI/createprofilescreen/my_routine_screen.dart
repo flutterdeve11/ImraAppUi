@@ -14,6 +14,7 @@ import '../../Widgets/text_widget.dart';
 import '../../Widgets/textfiled_widget.dart';
 import '../../app/locator.dart';
 import '../Home/location_confirm_screen.dart';
+import '../Home/location_screen.dart';
 import '../profilescreen/user_profile_screen1.dart';
 import '../questionnaire/questionnaire_screen1.dart';
 import '../questionnaire/questionnaire_screen2.dart';
@@ -549,7 +550,10 @@ class MyRoutineScreen extends StatelessWidget {
                                           context,
                                           PageTransition(
                                               type: PageTransitionType.fade,
-                                              child: LocationsConfirmScreen()));
+                                              child: locationScreen()
+                                              // LocationsConfirmScreen()
+
+                                              ));
                                     },
                                     child: Text(
                                       "Continue",

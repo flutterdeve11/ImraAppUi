@@ -103,34 +103,34 @@ class ProfileScreen3 extends StatelessWidget {
                                     fontSize: 2.t,
                                     textColor: ColorUtils.black,
                                   ),
-                                  Row(
-                                    children: [
-                                      InkWell(
-                                        onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              PageTransition(
-                                                  type: PageTransitionType.fade,
-                                                  child:
-                                                      MedicationHistoryScreen()));
-                                        },
-                                        child: Image.asset(
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          PageTransition(
+                                              type: PageTransitionType.fade,
+                                              child:
+                                                  MedicationHistoryScreen()));
+                                    },
+                                    child: Row(
+                                      children: [
+                                        Image.asset(
                                           ImageUtils.plusicon,
                                           fit: BoxFit.cover,
                                           width: 5.w,
                                           height: 5.w,
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: 2.w,
-                                      ),
-                                      TextWidget(
-                                        textValue: "Add More",
-                                        fontFamily: FontUtils.proxima,
-                                        fontSize: 2.t,
-                                        textColor: ColorUtils.bgcontiner,
-                                      ),
-                                    ],
+                                        SizedBox(
+                                          width: 2.w,
+                                        ),
+                                        TextWidget(
+                                          textValue: "Add More",
+                                          fontFamily: FontUtils.proxima,
+                                          fontSize: 2.t,
+                                          textColor: ColorUtils.bgcontiner,
+                                        ),
+                                      ],
+                                    ),
                                   )
                                 ],
                               ),

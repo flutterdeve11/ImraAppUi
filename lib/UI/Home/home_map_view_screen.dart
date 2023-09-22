@@ -70,7 +70,7 @@ class _HomeMapViewScreenState extends State<HomeMapViewScreen> {
                                         type: PageTransitionType.fade,
                                         child: UserProfileScreen1()));
                               },
-                              child: Image.network(
+                              child: Image.asset(
                                 // model.avatar.toString(),
                                 ImageUtils.personimg,
                                 width: 10.w,

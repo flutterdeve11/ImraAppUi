@@ -42,6 +42,7 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
       print('this is image url ${_image} ');
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<MainViewModel>.reactive(
@@ -115,14 +116,16 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
                                     width: 100,
                                     child: _image != null
                                         ? ClipRRect(
-                                      borderRadius: BorderRadius.circular(50.0),
-                                      child: Image.file(_image!, fit: BoxFit.cover),
-                                    )
+                                            borderRadius:
+                                                BorderRadius.circular(50.0),
+                                            child: Image.file(_image!,
+                                                fit: BoxFit.cover),
+                                          )
                                         : Icon(
-                                      Icons.person,
-                                      size: 40,
-                                      color: Colors.grey,
-                                    ), // Display the selected image if available
+                                            Icons.person,
+                                            size: 40,
+                                            color: Colors.grey,
+                                          ), // Display the selected image if available
                                   ),
                                   Positioned(
                                     top: 65,
@@ -154,7 +157,7 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
                               SizedBox(
                                 height: 3.h,
                               ),
-                             // Image.asset(ImageUtils.profile),
+                              // Image.asset(ImageUtils.profile),
                               SizedBox(
                                 height: 3.h,
                               ),
@@ -190,29 +193,29 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
                               SizedBox(
                                 height: 1.h,
                               ),
-                              CustomTextField(
-                                controller: model.countryController,
-                              ),
-                              // Container(
-                              //   //width: 90.w,
-                              //   //  height: 6.3.h,
-                              //   decoration: BoxDecoration(
-                              //       color: ColorUtils.silver1,
-                              //       borderRadius: BorderRadius.circular(10)),
-                              //   child: ListTile(
-                              //     onTap: () {
-                              //       Navigator.push(
-                              //           context,
-                              //           PageTransition(
-                              //               type: PageTransitionType.fade,
-                              //               child: SelectCountryScreen()
-                              //               //SelectCountryScreen()
-                              //
-                              //           ));
-                              //     },
-                              //     trailing: Image.asset(ImageUtils.fowardicon),
-                              //   ),
+                              // CustomTextField(
+                              //   controller: model.countryController,
                               // ),
+                              Container(
+                                //width: 90.w,
+                                //  height: 6.3.h,
+                                decoration: BoxDecoration(
+                                    color: ColorUtils.silver1,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: ListTile(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        PageTransition(
+                                            type: PageTransitionType.fade,
+                                            child: SelectCountryScreen()
+                                            //SelectCountryScreen()
+
+                                            ));
+                                  },
+                                  trailing: Image.asset(ImageUtils.fowardicon),
+                                ),
+                              ),
                               SizedBox(
                                 height: 2.h,
                               ),
@@ -230,8 +233,7 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
                                 height: 1.h,
                               ),
                               CustomTextField(
-                                controller: model.addressController
-                              ),
+                                  controller: model.addressController),
                               // Container(
                               //   //width: 90.w,
                               //   //  height: 6.3.h,
@@ -262,37 +264,42 @@ class _ProfileScreen1State extends State<ProfileScreen1> {
                                       borderRadius: BorderRadius.circular(8),
                                       color: ColorUtils.tuple),
                                   child: MaterialButton(
-                                    padding: EdgeInsets.zero,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(25)),
-                                    onPressed: () async{
-                                      model.loadingWidget == true
-                                          ? () {}:
-
-                                          model.doUserProfile(context,
-                                              //model.prefService.userToken.toString(),
-                                              model.prefService.userID.toString(),
-                                              model.dateofbithController.text,
-                                              model.countryController.text,
-                                              model.addressController.text,
-                                              _image.toString() );
-                                      // Navigator.push(
-                                      //     context,
-                                      //     PageTransition(
-                                      //         type: PageTransitionType.fade,
-                                      //         child: ProfileScreen2()));
-                                    },
-                                    child:  model.loadingWidget==false?Text(
-                                      "Continue",
-                                      style: TextStyle(
-                                        fontFamily: FontUtils.interSemiBold,
-                                        fontSize: 1.8.t,
-                                        color: ColorUtils.white,
-                                        // Color.fromRGBO(2, 104, 81, 1)
+                                      padding: EdgeInsets.zero,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(25)),
+                                      onPressed: () async {
+                                        // model.loadingWidget == true
+                                        //     ? () {}
+                                        //     : model.doUserProfile(
+                                        //         context,
+                                        //         //model.prefService.userToken.toString(),
+                                        //         model.prefService.userID
+                                        //             .toString(),
+                                        //         model.dateofbithController.text,
+                                        //         model.countryController.text,
+                                        //         model.addressController.text,
+                                        //         _image.toString());
+                                        Navigator.push(
+                                            context,
+                                            PageTransition(
+                                                type: PageTransitionType.fade,
+                                                child: ProfileScreen2()));
+                                      },
+                                      child:
+                                          // model.loadingWidget == false
+                                          //     ?
+                                          Text(
+                                        "Continue",
+                                        style: TextStyle(
+                                          fontFamily: FontUtils.interSemiBold,
+                                          fontSize: 1.8.t,
+                                          color: ColorUtils.white,
+                                          // Color.fromRGBO(2, 104, 81, 1)
+                                        ),
+                                      )
+                                      //: WidgetLoader()
                                       ),
-                                    ):WidgetLoader()
-                                  ),
                                 ),
                               ),
                               SizedBox(

@@ -245,21 +245,25 @@ class _AddDocumentScreenState extends State<AddDocumentScreen> {
                                 ),
                               ),
 
-                             Container(
-                               child: _image!=null? ListTile(
-                                 leading:Container(
-                                   width: 100,
-                                   height: 50,
-                                   child: Image.file(_image!,fit: BoxFit.cover,),
-                                 ) ,
-                                 title: Text('Documet')
-                                 //Text(_image.toString()),
-                               ):child
-                             ),
-                             // Row(children: [Container(
-                             //   width: 100,
-                             //   height: 50,
-                             //   child: Image.file(_image!,fit: BoxFit.cover,),)],),
+                              Container(
+                                  child: _image != null
+                                      ? ListTile(
+                                          leading: Container(
+                                            width: 100,
+                                            height: 50,
+                                            child: Image.file(
+                                              _image!,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                          title: Text('Documet')
+                                          //Text(_image.toString()),
+                                          )
+                                      : child),
+                              // Row(children: [Container(
+                              //   width: 100,
+                              //   height: 50,
+                              //   child: Image.file(_image!,fit: BoxFit.cover,),)],),
                               //Text(_image.toString()),
                               SizedBox(
                                 height: 20.h,
@@ -279,34 +283,36 @@ class _AddDocumentScreenState extends State<AddDocumentScreen> {
                                       borderRadius: BorderRadius.circular(8),
                                       color: const Color(0xFFF7F7F9)),
                                   child: MaterialButton(
-                                    padding: EdgeInsets.zero,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(25)),
-                                    onPressed: () async{
-
-                                      model.loadingWidget == true
-                                          ? () {} : await model.doDoc(context,
-                                          model.docnameController.text,
-                                          model.descpController.text,
-                                          _image!.toString(),
-                                      );
-                                      // Navigator.push(
-                                      //     context,
-                                      //     PageTransition(
-                                      //         type: PageTransitionType.fade,
-                                      //         child: DocumentScreen()));
-                                    },
-                                    child: model.loadingWidget==false? Text(
-                                      "Submit",
-                                      style: TextStyle(
-                                        fontFamily: FontUtils.interSemiBold,
-                                        fontSize: 1.8.t,
-                                        color: ColorUtils.silver,
-                                        // Color.fromRGBO(2, 104, 81, 1)
+                                      padding: EdgeInsets.zero,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(25)),
+                                      onPressed: () async {
+                                        // model.loadingWidget == true
+                                        //     ? () {} : await model.doDoc(context,
+                                        //     model.docnameController.text,
+                                        //     model.descpController.text,
+                                        //     _image!.toString(),
+                                        // );
+                                        Navigator.push(
+                                            context,
+                                            PageTransition(
+                                                type: PageTransitionType.fade,
+                                                child: DocumentScreen()));
+                                      },
+                                      child:
+                                          // model.loadingWidget==false?
+                                          Text(
+                                        "Submit",
+                                        style: TextStyle(
+                                          fontFamily: FontUtils.interSemiBold,
+                                          fontSize: 1.8.t,
+                                          color: ColorUtils.silver,
+                                          // Color.fromRGBO(2, 104, 81, 1)
+                                        ),
+                                      )
+                                      //:WidgetLoader()
                                       ),
-                                    ):WidgetLoader()
-                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -329,7 +335,6 @@ class _AddDocumentScreenState extends State<AddDocumentScreen> {
 }
 
 void _settingModalBottomSheet(context) {
-
   showModalBottomSheet(
       backgroundColor: Colors.grey,
       context: context,
